@@ -1,9 +1,21 @@
 pipeline {
     agent any
     stages {
-        stage('Hello') {
+        stage('Build') {
             steps {
-                echo 'Hello World'
+                sh 'npm install'
+                sh 'npm run build'
+            }
+        }
+        stage('Test') {
+            steps {
+                sh 'npm test'
+            }
+        }
+        stage('Deploy') {
+            steps {
+                sh 'docker build -t my-app .'
+                sh 'docker run -d -p 3000:3000 my-app'
             }
         }
     }
