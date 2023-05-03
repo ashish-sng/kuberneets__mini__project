@@ -16,7 +16,7 @@ const useStyles = makeStyles((theme) => ({
   },
   tagline: {
     display: "flex",
-    height: "40%",
+    height: "41%",
     flexDirection: "column",
     justifyContent: "center",
     textAlign: "center",
